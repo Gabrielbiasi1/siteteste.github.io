@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        body 
+        {
+            font-family:"Lato", sans-serif;
+        }
+
+        .sidenav
+        {
+            height:100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a
+        {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        sidenav a:hover
+        {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn
+        {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height:450px)
+        {
+            .sidenav{padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+        </style>
+    </head>  
+
+    <body>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Clientes</a>
+            <a href="#">Contato</a>
+            
+        </div>
+        <h2>Biblioteca do Klebim</h2>
+        <p>Clica pra ver o catalago do kleber</p>
+        <table border="1">
+            <tr>
+                <td>Nº livro</td>
+                <td>Retirado por</td>
+                <td>IDLivro</td>
+            </tr>
+            <tr>
+                <td>Berzerk.31</td>
+                <td>Juquinha Caça Rato</td>
+                <td>14123/5</td>
+            </tr>
+            <tr>
+                <td>O livro dos cinco anéis</td>
+                <td>Myiamoto Musashi III</td>
+                <td>7777/3</td>
+            </tr>
+
+        </table>
+          <span style="font-size: 30px;cursor: pointer" onclick="openNav()">&#9776; open</span>
+        <script>
+            function openNav()
+            {
+            document.getElementById("mySidenav").style.width = "250px"
+        }
+
+        function closeNav()
+        {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+
+<?php
+        $con = mysqli_connect("localhost","peter","abc123","my_db");
+        $result = mysqli_query($con,"SELECT * FROM Persons LIMIT 50");
+        $data = $result->fetch_all(MYSQLI_ASSOC);
+        ?>
+
+        <table border="1">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <?php foreach($data as $row): ?>
+        <tr>
+            <td><?= htmlspecialchars($row['first_name']) ?></td>
+            <td><?= htmlspecialchars($row['last_name']) ?></td>
+        </tr>
+  <?php endforeach ?>
+        </table>
+    </body>
+    </html>
