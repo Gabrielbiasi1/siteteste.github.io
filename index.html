@@ -2,11 +2,8 @@
 <html>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+        <span style="font-size:30px" onclick="openNav()">&#9776</span><span style="text-align: right"> Venha para a Loud! Garanta já sua camiseta!</span>
         <style>
-        body 
-        {
-            font-family:"Lato", sans-serif;
-        }
 
         .sidenav
         {
@@ -37,82 +34,28 @@
             color: #f1f1f1;
         }
 
-        .sidenav .closebtn
-        {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
+        img.rounded {
+            border-radius: 10px;
         }
-
-        @media screen and (max-height:450px)
-        {
-            .sidenav{padding-top: 15px;}
-            .sidenav a {font-size: 18px;}
+       
+        .img1{
+            right:300px;
+            position: absolute;
         }
         </style>
     </head>  
 
+
+
+
     <body>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">Sobre</a>
-            <a href="#">Serviços</a>
-            <a href="#">Clientes</a>
-            <a href="#">Contato</a>
-            
+        <div class="text-align: center">
+            <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F01.png%3Fv%3D1710814402&w=1920&q=75" class="rounded" id="img1"width="500px">
+            <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F2_645cb295-ef7c-4ac4-a641-8fa5f997e139.jpg%3Fv%3D1710814402&w=384&q=75"class="rounded" id="img2" width="100px">
+            <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F02.png%3Fv%3D1710814402&w=384&q=75"id="img3" width="100px"class="rounded">
+            <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F03.png%3Fv%3D1710814402&w=384&q=75"id="img4"width="100px"class="rounded">
+            <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F4_8831dea3-d86f-4813-960a-6ed523ee9a5a.jpg%3Fv%3D1710814402&w=384&q=75"class="rounded" id="img4"width="100px">
+
         </div>
-        <h2>Biblioteca do Klebim</h2>
-        <p>Clica pra ver o catalago do kleber</p>
-        <table border="1">
-            <tr>
-                <td>Nº livro</td>
-                <td>Retirado por</td>
-                <td>IDLivro</td>
-            </tr>
-            <tr>
-                <td>Berzerk.31</td>
-                <td>Juquinha Caça Rato</td>
-                <td>14123/5</td>
-            </tr>
-            <tr>
-                <td>O livro dos cinco anéis</td>
-                <td>Myiamoto Musashi III</td>
-                <td>7777/3</td>
-            </tr>
-
-        </table>
-          <span style="font-size: 30px;cursor: pointer" onclick="openNav()">&#9776; open</span>
-        <script>
-            function openNav()
-            {
-            document.getElementById("mySidenav").style.width = "250px"
-        }
-
-        function closeNav()
-        {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-        </script>
-
-<?php
-        $con = mysqli_connect("localhost","peter","abc123","my_db");
-        $result = mysqli_query($con,"SELECT * FROM Persons LIMIT 50");
-        $data = $result->fetch_all(MYSQLI_ASSOC);
-        ?>
-
-        <table border="1">
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-        </tr>
-        <?php foreach($data as $row): ?>
-        <tr>
-            <td><?= htmlspecialchars($row['first_name']) ?></td>
-            <td><?= htmlspecialchars($row['last_name']) ?></td>
-        </tr>
-  <?php endforeach ?>
-        </table>
     </body>
-    </html>
+ </html>
