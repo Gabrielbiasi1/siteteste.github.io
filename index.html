@@ -2,60 +2,125 @@
 <html>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <span style="font-size:30px" onclick="openNav()">&#9776</span><span style="text-align: right"> Venha para a Loud! Garanta já sua camiseta!</span>
         <style>
+            body{
+                background-color: white;
+            }
+            .topnav {
+                background-color: #333;
+                overflow: hidden;
+                max-width: 100%;
+            }
 
-        .sidenav
-        {
-            height:100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
 
-        .sidenav a
-        {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
 
-        sidenav a:hover
-        {
-            color: #f1f1f1;
-        }
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+            }
 
-        img.rounded {
-            border-radius: 10px;
-        }
-       
-        .img1{
-            right:300px;
-            position: absolute;
-        }
+            .main-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .black-header {
+                background-color: black;
+                color: green;
+                padding: 20px;
+                text-align: left;
+            }
+
+            .main-image {
+                display: block;
+                position: relative;
+        
+            }
+
+            .main-image img {
+                max-width:50%;
+                height: auto;
+                display: block;
+                position: relative;
+                border-radius: 10px;
+                right: 200px;
+                top: 50px;
+ 
+            }
+
+            .small-images {
+                display: flex;
+                flex-direction: column;
+                display: block;
+                position: relative;
+                right:1150px;
+                top:45px ;
+    
+            }
+
+            .small-images img {
+                max-width: 25%;
+                height: auto;
+                border-radius: 10px;
+                display: block;
+                margin-top: 10px;
+                position: relative;
+     
+            }
+            .modalLoudHeader{
+                color:black;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                right:750px;
+                text-align: center;
+                top: -180px;
+                font-size: 12px;
+                font-family: Arial, sans-serif; 
+            }
+
+
         </style>
+         <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#news">Sobre a ORG</a>
+            <a href="#contact">Loja</a>
+            <a href="#about">Contatos</a>
+          </div>
     </head>  
-
-
-
-
     <body>
-        <div class="text-align: center">
-            <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F01.png%3Fv%3D1710814402&w=1920&q=75" class="rounded" id="img1"width="500px">
-            <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F2_645cb295-ef7c-4ac4-a641-8fa5f997e139.jpg%3Fv%3D1710814402&w=384&q=75"class="rounded" id="img2" width="100px">
-            <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F02.png%3Fv%3D1710814402&w=384&q=75"id="img3" width="100px"class="rounded">
-            <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F03.png%3Fv%3D1710814402&w=384&q=75"id="img4"width="100px"class="rounded">
-            <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F4_8831dea3-d86f-4813-960a-6ed523ee9a5a.jpg%3Fv%3D1710814402&w=384&q=75"class="rounded" id="img4"width="100px">
-
+        <header class="black-header">
+            <img src="http://assets.mktnaweb.com/accounts/2017/07/07/99998/pictures/1065/original_Loud_Banner.png?1595514419" style="max-width:20%">
+        </header>
+        <div class="main-container">
+            <div class="main-image">
+                <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F01.png%3Fv%3D1710814402&w=1920&q=75" class="rounded">
+            </div>
+            <div class="small-images">
+                <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F2_645cb295-ef7c-4ac4-a641-8fa5f997e139.jpg%3Fv%3D1710814402&w=384&q=75"class="rounded" id="img2">
+                <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F02.png%3Fv%3D1710814402&w=384&q=75"id="img3"class="rounded">
+                <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F03.png%3Fv%3D1710814402&w=384&q=75"id="img4" class="rounded">
+                <img src="https://loud.gg/_next/image/?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0072%2F9671%2F2755%2Ffiles%2F4_8831dea3-d86f-4813-960a-6ed523ee9a5a.jpg%3Fv%3D171081402&w=384&q=75" class="rounded" id="img5">
+            </div>
         </div>
+        <div id="LoudModal" class="modalLoudHeader" style="text-align: right;">
+            <h1>Uniforme oficial LOUD 2K23</h1>
+            <h2> R$ 149,90</h2>
+        </div>
+   
+
     </body>
- </html>
+</html>
